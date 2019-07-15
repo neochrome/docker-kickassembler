@@ -1,0 +1,11 @@
+#!/bin/bash
+if [[ ${DOCKER_TAG:-latest} != latest ]]; then
+	VERSION_ARG="--build-arg VERSION=$DOCKER_TAG"
+fi
+docker build \
+	$VERSION_ARG \
+	-f $DOCKERFILE_PATH \
+	-t $IMAGE_NAME \
+	.
+
+# vim: ft=sh
