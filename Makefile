@@ -1,7 +1,7 @@
 all: build
 
 build:
-	docker build -t kickassembler .
+	docker build -t neochrome/kickassembler .
 
 clean:
-	docker rmi kickassembler
+	docker rmi neochrome/kickassembler
