@@ -2,6 +2,9 @@
 if [[ ${DOCKER_TAG:-latest} != latest ]]; then
 	VERSION_ARG="--build-arg VERSION=$DOCKER_TAG"
 fi
+
+echo "Building $DOCKER_TAG..."
+
 docker build \
 	$VERSION_ARG \
 	-f $DOCKERFILE_PATH \
